@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/formulario.css">
+        <!-- instalar extension indentator -->
+        <title>formulario</title>
+
+        <style>
+
+            /*td>a:link,a:visited, a:hover{
+            color:darkgrey;
+            font-size: 1.5rem;
+            }*/
+            td>a:link,a:visited{
+                color:darkgrey;
+                font-size: 1.5rem;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMenu" aria-controls="navBarMenuContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navBarMenu">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group" id="btngrpMenu">
+                        <button type="button" class="btn btn-dark" id="btn_guardar"><i class="fas fa-save"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-plus-square"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i></button>
+                    </div>
+
+                    <div class="btn-group mr-2" role="group" aria-label="First group" id="btngrpMenuDireccion">
+                        <button type="button" class="btn btn-dark" id="btn_domicilio"><i class="far fa-address-book"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-edit"></i></button>
+
+                    </div>
+                </div>
+
+            </div> <!-- -->
+        </nav> <!-- fin del nav -->
+
+
+
+        <div class="container-fluid pt-5">
+            <div class="row"><div class="col pt-2">&nbsp;</div></div>
+
+
+            <div id="alertError">
+
+            </div>
+
+
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <div class="card bg-light">
+
+                <h5 class="card-header">Contribuyentes</h5>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="razon_social">Razón Social</label>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary active">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Fisica
+                                    </label>
+                                    <label class="btn btn-outline-primary">
+                                        <input type="radio" name="options" id="option2" autocomplete="off"> Moral
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="rfc">RFC</label>
+
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" maxlength="4" id="rfc1">
+                                    <input type="text" class="form-control" maxlength="6" id="rfc2">
+                                    <input type="text" class="form-control" maxlength="3" id="rfc3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+
+
+                                <label for="curp">CURP</label>
+                                <input type="text" class="form-control" name="curp" id="curp" placeholder="CURP" maxlength="18">
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="curp">Nacionalidad</label>
+                                <select class="form-control" name="nacionalidad" id="nacionalidad">
+                                    <option>Mexicana</option>
+                                    <option>Extranjera</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 ">
+                            <div class="form-group">
+                                <label form="nombre">Nombre(s)</label>
+                                <input type="text" class="form-control" maxlength="50" placeholder="Nombre(s)">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 ">
+                            <div class="form-group">
+                                <label form="nombre">Apellido Paterno</label>
+                                <input type="text" class="form-control" maxlength="50" placeholder="Apellido Paterno">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 ">
+                            <div class="form-group">
+                                <label form="nombre">Apellido Materno</label>
+                                <input type="text" class="form-control" maxlength="50" placeholder="Apellido Materno">
+
+                            </div>
+                        </div>
+
+
+                    </div> <!-- fin row -->
+
+                    <div class="row ">
+                        <div class="col-lg-8 d-lg-block d-xl-block d-none d-sm-none d-md-none">
+                            <div class="form-group row">
+                                <label form="nombre" class="col-12">Nombre Completo</label>
+                                <div class="col">
+                                    <input type="text" class="form-control" maxlength="150" placeholder="Nombre completo">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="col-12 d-none d-sm-none d-md-block d-lg-block d-xl-block">&nbsp;</div>
+                            <div class="col-12 mt-md-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Pensionado</label>
+
+                                </div> <!-- fin row -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="">Situación del Contribuyente</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Situación Contribuyente" aria-label="Situación Contribuyente" aria-describedby="situacion-contribuyente">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#msituacion">Ir</button>
+                                    </div>
+                                </div>    
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="col-12 d-none d-sm-none d-md-block d-lg-block d-xl-block">&nbsp;</div>
+                            <div class="col-12 mt-md-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Pensionado</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div> <!-- card-body -->
+            </div><!-- fin card --> 
+
+
+
+
+            <div class="modal fade" id="msituacion" tabindex="-1" role="dialog" aria-labelledby="msituacionTitulo" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="msituacionLongTitulo">Situación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="msituacion" tabindex="-1" role="dialog" aria-labelledby="msituacionTitulo" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="msituacionLongTitulo">Situación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ....
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+<div class="accordion" id="accordion">
+<div class="card">
+<div class="card-header" id="headingOne">
+<h5 class="mb-0">
+<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+Collapsible Group Item #1
+</button>
+</h5>
+</div>
+
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+<div class="card-body">
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header" id="headingTwo">
+<h5 class="mb-0">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+Collapsible Group Item #2
+</button>
+</h5>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+<div class="card-body">
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header" id="headingThree">
+<h5 class="mb-0">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+Collapsible Group Item #3
+</button>
+</h5>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+<div class="card-body">
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+</div>
+</div>
+</div>
+</div>
+-->
+
+
+            <p>
+                <a class="btn btn-primary" data-toggle="collapse" href="#contenedor1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Link with href
+                </a>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contenedor1" aria-expanded="false" aria-controls="collapseExample">
+                    Button with data-target
+                </button>
+            </p>
+
+            <div class="collapse show" id="contenedor1">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+
+
+
+
+
+            <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="domicilio_tab" data-toggle="tab" href="#tab_domicilio" role="tab" aria-controls="domicilio_tab" aria-selected="true">Domicilio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="registro_tab" data-toggle="tab" href="#tab_registro" role="tab" aria-controls="registro" aria-selected="false">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="obligacion_tab" data-toggle="tab" href="#tab_obligacion" role="tab" aria-controls="obligacion" aria-selected="false">Obligaciones</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab_domicilio" role="tabpanel" aria-labelledby="tab_domicilio">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <table class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Domicilio</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Colonia</th>
+                                        <th scope="col">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <a href="#editar" >
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="#eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Acciones
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#editar">Editar
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#eliminar">Eliminar
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                        <td><i class="fas fa-clipboard-check"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+
+                </div><!-- fin tab_domicilio -->
+
+
+                <div class="tab-pane fade" id="tab_registro" role="tabpanel" aria-labelledby="tab_registro">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="inciso">Inciso</label>
+                                <div class="input-group">
+                                    <input type="text" name="inciso" id="inciso" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#minciso">Ir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="descripcion_inciso">Descripción</label>
+                                <input type="text" name="descripcion_inciso" id="descripcion_inciso" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            </div><!-- fin tab-content-->
+
+
+
+
+            <div class="modal fade" id="mdireccion" tabindex="-1" role="dialog" aria-labelledby="mdireccionLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="mdireccionLongTitle">Domicilio</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="estado">Estado</label>
+                                        <select class="form-control" id="estado">
+                                            <option>Baja California Sur</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="municipio">Municipio</label>
+                                        <select class="form-control" id="municipio">
+                                            <option>La Paz</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="localidad">Localidad</label>
+                                        <select class="form-control" id="localidad">
+                                            <option>La Paz</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="recudadora">Recaudadora</label>
+                                        <select class="form-control" id="recaudadora">
+                                            <option>La Paz/Transito</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group row">
+                                        <label form="nombre" class="col-12">Domicilio</label>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" maxlength="150" placeholder="Domicilio">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- fin modal -->
+        </div>
+
+
+
+
+
+
+
+        <!-- Jquery primero despues bootstrap -->
+        <script src="js/jquery-slim.min.js"></script>
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/fontawesome-all.min.js"></script>   
+        
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        
+    </body>
+</html>
