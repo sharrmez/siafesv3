@@ -1,2 +1,6 @@
 reglas
+<<<<<<< HEAD
 realizar el pull request pero local
+=======
+solicitar pull request
+>>>>>>> origin
