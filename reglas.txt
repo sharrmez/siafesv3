@@ -1,1 +1,2 @@
 reglas
+realizar el pull request pero local
